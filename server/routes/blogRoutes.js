@@ -24,7 +24,7 @@ blogRoutes.get("/user-blogs/:id", getUserBlogsController);
 blogRoutes.get("/get-blog/:id", getBlogByIdController);
 
 // update single blog || PUT
-blogRoutes.put("/update-blog/:id", updateBlogController);
+blogRoutes.put("/update-blog", updateBlogController);
 
 // delete single blog || DELETE
 blogRoutes.delete("/delete-blog/:id", deleteBlogController);

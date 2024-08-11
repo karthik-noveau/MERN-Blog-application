@@ -54,6 +54,12 @@ app.use(morgan("dev"));
 app.use("/api/v1/user", userRoutes);
 app.use("/api/v1/blog", blogRoutes);
 
+// @ simple route
+// app.delete('/blog/:id', (req, res) => {
+//   const blogId = req.params.id;
+//   res.send(`Blog with ID ${blogId} deleted`);
+// });
+
 // @ app.use()
 // -----Used to define route handlers specifically for HTTP GET requests to a particular path
 

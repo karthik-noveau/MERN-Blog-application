@@ -133,9 +133,9 @@ export const getBlogByIdController = async (req, res) => {
 //  ************** udpate a blog ***************
 export const updateBlogController = async (req, res) => {
   try {
-    const { id } = req.params;
+    const { blogId } = req.body;
     const blog = await blogModel.findByIdAndUpdate(
-      id,
+      blogId,
       { ...req.body },
       { new: true }
     );

@@ -37,9 +37,10 @@ export const UpdateBlog = () => {
     setIsLoading(true);
     try {
       const { data } = await axios.put(
-        `${process.env.REACT_APP_SERVER_URL}/api/v1/blog/update-blog/${blogId}`,
+        `${process.env.REACT_APP_SERVER_URL}/api/v1/blog/update-blog`,
         {
           userId: loginInfo.id,
+          blogId: blogId,
           title: values.title,
           description: values.description,
           image: values.image,
