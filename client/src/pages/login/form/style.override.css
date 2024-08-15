@@ -87,7 +87,7 @@
 .formValidation .ant-input:focus {
   border-color: var(--border-color-hover) !important;
 }
-.formValidation .ant-form-item button {
+.formValidation .ant-form-item button { 
   background: var(--button-bg-color-hover);
   background-size: 200% 100%;
   background-position: right center;

@@ -27,8 +27,8 @@ export function Login() {
       );
       if (data.success) {
         setIsLoading(false);
-        navigate("/blogs");
         dispatch(authActions.login(data.user._id));
+        navigate("/all-blogs");
       }
     } catch {
       alert("user not exist");

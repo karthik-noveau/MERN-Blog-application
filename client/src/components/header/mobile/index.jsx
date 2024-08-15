@@ -64,7 +64,7 @@ export const MobileHeader = ({ loginInfo, handleLogout }) => {
         }}
       >
         <div className={styles.leftInfo}>
-          <Link to="/blogs" onClick={() => setIsOpen(false)}>
+          <Link to="/all-blogs" onClick={() => setIsOpen(false)}>
             <p>Noveau Blog</p>
           </Link>
         </div>
@@ -98,8 +98,8 @@ export const MobileHeader = ({ loginInfo, handleLogout }) => {
                 <p
                   className={`${styles.menuItem} ${
                     isOpen ? "sui-aos-down1" : "sui-aos-up"
-                  } ${location.pathname === "/blogs" ? styles.active : ""}`}
-                  onClick={() => onMenuClick("/blogs")}
+                  } ${location.pathname === "/all-blogs" ? styles.active : ""}`}
+                  onClick={() => onMenuClick("/all-blogs")}
                 >
                   Blogs
                 </p>
@@ -153,7 +153,7 @@ export const MobileHeader = ({ loginInfo, handleLogout }) => {
             }`}
             onClick={() => {
               handleLogout();
-              onMenuClick("/logout");
+              onMenuClick("/login");
             }}
           >
             Logout

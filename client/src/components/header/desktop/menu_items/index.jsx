@@ -12,7 +12,7 @@ export const MenuItems = (props) => {
     <div className={styles.menuWrapper}>
       {loginInfo?.id && (
         <React.Fragment>
-          <p className={styles.menuItem} onClick={() => navigate("/blogs")}>
+          <p className={styles.menuItem} onClick={() => navigate("/all-blogs")}>
             Blogs
           </p>
           <p

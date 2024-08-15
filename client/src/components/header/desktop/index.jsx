@@ -40,7 +40,7 @@ export const DeskNavbar = (props) => {
       }`}
     >
       {/* logo */}
-      <div className={styles.logoContainer} onClick={() => navigate("/blogs")}>
+      <div className={styles.logoContainer} onClick={() => navigate("/all-blogs")}>
         {isShowLogoImg && <img src="" alt="logo" />}
         {!isShowLogoImg && <p>Noveau Blog</p>}
       </div>

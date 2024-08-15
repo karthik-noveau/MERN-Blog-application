@@ -18,8 +18,11 @@ function App() {
   let isAuthRoute = ["/login", "/register"].includes(location?.pathname);
 
   useEffect(() => {
-    if (!isAuthenticated && !isAuthRoute) {
-      navigate("/login");
+    if (isAuthRoute) {
+      !isAuthenticated && navigate("/login");
+    }
+    if (location.pathname === "/") {
+      navigate("/all-blogs");
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated, isAuthRoute]);
@@ -28,12 +31,11 @@ function App() {
     <React.Fragment>
       {!isAuthRoute && <Header />}
       <Routes>
-        <Route path="/" element={<AllBlogs />} />
+        <Route path="/all-blogs" element={<AllBlogs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/user-blogs" element={<UserBlogs />} />
         <Route path="/blog-details/:id" element={<UpdateBlog />} />
-        <Route path="/blogs" element={<AllBlogs />} />
         <Route path="/create-blog" element={<CreateBlog />} />
       </Routes>
     </React.Fragment>

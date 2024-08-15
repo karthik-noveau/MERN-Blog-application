@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useDispatch } from "react-redux";
 
 import { RegisterForm } from "./form";
-
+import { authActions } from "../../redux/store";
+  
 import styles from "./style.module.css";
 
 import blogIllustration from "../../assets/login/blogIllustration.jpg";
@@ -11,6 +13,8 @@ import blogIllustration from "../../assets/login/blogIllustration.jpg";
 export function Register() {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+
+  const dispatch = useDispatch();
 
   const onRegister = async (values) => {
     setIsLoading(true);
@@ -25,7 +29,8 @@ export function Register() {
       );
       if (data.success) {
         setIsLoading(false);
-        navigate("/blogs");
+        dispatch(authActions.login(data.user._id));
+        navigate("/all-blogs");
       }
     } catch (error) {
       setIsLoading(false);
